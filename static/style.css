@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.hotel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hotel-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: black;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.hotel-card:hover {
+    transform: scale(1.05);
+}
+
+.menu-list {
+    max-width: 400px;
+    margin: auto;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: blue;
+    text-decoration: none;
+}

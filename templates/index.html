@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Available Hotels</h1>
+    <div class="hotel-list">
+        {% for id, hotel in hotels.items() %}
+        <a href="/hotel/{{ id }}" class="hotel-card">
+            <h2>{{ hotel.name }}</h2>
+            <p>Click to view menu</p>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

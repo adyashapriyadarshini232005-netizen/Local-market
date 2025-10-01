@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ hotel.name }} Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ hotel.name }} - Menu</h1>
+    <div class="menu-list">
+        {% for item in hotel.menu %}
+        <div class="menu-item">
+            <span>{{ item.name }}</span>
+            <span>₹{{ item.price }}</span>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/" class="back-link">⬅ Back to Hotels</a>
+</body>
+</html>
