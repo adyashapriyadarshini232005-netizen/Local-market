@@ -1,63 +1,48 @@
+// Sample Data
 const hotels = [
-    {
-        id: 1,
-        name: "Hotel Paradise",
-        menu: [
-            { name: "Chicken Biryani", price: 180 },
-            { name: "Paneer Butter Masala", price: 150 }
-        ]
-    },
-    {
-        id: 2,
-        name: "Foodie's Hub",
-        menu: [
-            { name: "Veg Thali", price: 120 },
-            { name: "Mutton Curry", price: 220 }
-        ]
-    },
-    {
-        id: 3,
-        name: "Spice Garden",
-        menu: [
-            { name: "Masala Dosa", price: 80 },
-            { name: "Idli Sambhar", price: 60 }
-        ]
-    }
+    { id: 1, name: "Hotel A", menu: [{name: "Burger", price: 120}, {name: "Pizza", price: 250}] },
+    { id: 2, name: "Hotel B", menu: [{name: "Sandwich", price: 80}, {name: "Pasta", price: 200}] },
+    { id: 3, name: "Hotel C", menu: [{name: "Sushi", price: 300}, {name: "Ramen", price: 250}] }
 ];
 
-const hotelListDiv = document.getElementById('hotel-list');
-const menuListDiv = document.getElementById('menu-list');
-const menuItemsDiv = document.getElementById('menu-items');
-const hotelNameH2 = document.getElementById('hotel-name');
+// Elements
+const hotelList = document.getElementById('hotel-list');
+const menuList = document.getElementById('menu-list');
+const hotelName = document.getElementById('hotel-name');
+const menuItems = document.getElementById('menu-items');
 const backBtn = document.getElementById('back-btn');
 
-// Show hotel cards
-hotels.forEach(hotel => {
-    const card = document.createElement('div');
-    card.className = 'hotel-card';
-    card.innerHTML = `<h2>${hotel.name}</h2><p>Click to view menu</p>`;
-    card.addEventListener('click', () => showMenu(hotel.id));
-    hotelListDiv.appendChild(card);
-});
-
-// Show menu for a hotel
-function showMenu(hotelId) {
-    const hotel = hotels.find(h => h.id === hotelId);
-    if (!hotel) return;
-    hotelNameH2.textContent = hotel.name;
-    menuItemsDiv.innerHTML = '';
-    hotel.menu.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'menu-item';
-        div.innerHTML = `<span>${item.name}</span><span>₹${item.price}</span>`;
-        menuItemsDiv.appendChild(div);
+// Display Hotels
+function displayHotels() {
+    hotelList.innerHTML = '';
+    hotels.forEach(hotel => {
+        const card = document.createElement('div');
+        card.className = 'hotel-card';
+        card.textContent = hotel.name;
+        card.onclick = () => showMenu(hotel);
+        hotelList.appendChild(card);
     });
-    hotelListDiv.style.display = 'none';
-    menuListDiv.style.display = 'block';
 }
 
-// Back to hotels
+// Show Menu
+function showMenu(hotel) {
+    hotelList.style.display = 'none';
+    menuList.style.display = 'block';
+    hotelName.textContent = hotel.name;
+    menuItems.innerHTML = '';
+    hotel.menu.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'menu-card';
+        card.innerHTML = `<strong>${item.name}</strong> <p>₹${item.price}</p>`;
+        menuItems.appendChild(card);
+    });
+}
+
+// Back to Hotels
 backBtn.addEventListener('click', () => {
-    menuListDiv.style.display = 'none';
-    hotelListDiv.style.display = 'flex';
+    menuList.style.display = 'none';
+    hotelList.style.display = 'block';
 });
+
+// Initialize
+displayHotels();
