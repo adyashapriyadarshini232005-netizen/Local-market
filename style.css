@@ -1,14 +1,8 @@
-* {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f7f7f7;
-    color: #333;
-    min-height: 100vh;
 }
 
 header {
@@ -16,47 +10,22 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-h1 {
-    font-size: 2rem;
-}
-
-.hotel-list, .menu-list {
-    max-width: 800px;
+.hotel-list {
+    max-width: 600px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-.hotel-card, .menu-card {
+.hotel-card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.2s ease;
 }
 
-.hotel-card:hover, .menu-card:hover {
-    transform: scale(1.02);
-}
-
-#back-btn {
-    margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#back-btn:hover {
-    background-color: #e65c50;
-}
-
-.menu-card p {
-    margin-top: 0.5rem;
+.hotel-card p {
+    margin: 0.2rem 0;
 }
