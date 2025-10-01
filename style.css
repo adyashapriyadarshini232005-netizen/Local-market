@@ -2,29 +2,27 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background: #f8f9fa;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
     color: #333;
 }
 
 .hotel-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
 }
 
 .hotel-card {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-    text-decoration: none;
-    color: black;
     width: 200px;
-    text-align: center;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
     transition: transform 0.2s;
 }
 
@@ -34,7 +32,8 @@ h1 {
 
 .menu-list {
     max-width: 400px;
-    margin: auto;
+    margin: 20px auto;
+    text-align: left;
 }
 
 .menu-item {
@@ -47,10 +46,8 @@ h1 {
     box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
 }
 
-.back-link {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    color: blue;
-    text-decoration: none;
+#back-btn {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
 }
